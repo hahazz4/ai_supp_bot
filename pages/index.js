@@ -51,8 +51,14 @@ function Home() {
       borderRadius: 1,
       p: 3,
       }}>
-        <Link href="/"><a sx={{color: "black", textDecoration: 'none', '&:visited': {color: 'black',},'&:hover': {textDecoration: 'none',},'&:active': {color: 'black'}}}>
-          <Typography>Olympic Expert</Typography></a>
+        <Link href="/" legacyBehavior>
+          <a style={{textDecoration: 'none'}} onClick={(e) => {
+            e.preventDefault(); //should prevent the default action from happening, learning something new :)
+            window.location.href = '/';}}>
+            <Typography color="text.primary">
+              Olympic Expert
+            </Typography>
+          </a>
         </Link>
         <IconButton sx={{position: "absolute", top: 0, right: 0, ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">
           {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
@@ -100,7 +106,7 @@ function Home() {
                 flexDirection="row"
                 width="100%">
                   <TextField label="Message" fullWidth variant="outlined" value={inputMsg} onChange={(e) => setInputMsg(e.target.value)} placeholder="Enter your message here.."/>
-                  <Button varient="contained" onClick={handleSendMsg}><SendIcon Size='50px'/></Button>
+                  <Button varient="contained" onClick={handleSendMsg}><SendIcon size='50px'/></Button>
               </Stack>
           </Stack>
         </Box>
