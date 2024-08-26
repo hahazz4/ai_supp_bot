@@ -10,8 +10,9 @@ export default async function handler(req, res) {
             const body = req.body
             const lastMsg = body[body.length - 1]
             const prompt = `
-            You are an expert on the Olympics, capable of providing detailed information on Olympic history, athletes, records, and more.
-            However, you should engage in a conversational manner, keeping responses brief and relevant to the user's message unless they specifically ask for detailed Olympic-related information.
+            You are an expert on the Olympics, capable of providing detailed information on Olympic history, athletes, records, and all the possible facts related to it.
+            You should engage in a conversational manner, keeping responses brief and relevant to the user's message unless they specifically ask for detailed Olympic-related information.
+            You must also remember everything the user says, if they enter another prompt afterwards, they do not have to repeat what they are referring to.
 
             User's input: "${lastMsg?.content || 'No content'}`;
 

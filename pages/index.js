@@ -92,7 +92,7 @@ function Home() {
                   {
                     msgs.map((msg, index) => (
                       <Box key={index} display="flex" justifyContent={msg.role === 'Bot' ? 'flex-start' : 'flex-end'}>
-                        <Box bgcolor={msg.role === 'Bot' ? 'text.primary' : 'text.primary'} color="background.default" borderRadius={16} p={3}>
+                        <Box bgcolor={msg.role === 'Bot' ? 'text.primary' : 'text.secondary'} color="background.default" borderRadius={16} p={3}>
                           {
                             msg.content
                           }
