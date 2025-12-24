@@ -6,7 +6,7 @@ export default async function handler(req, res) {
         const genAI = new GoogleGenerativeAI(process.env.GEMINI_KEY);
         console.log("Initialized GoogleGenerativeAI");
         try {
-            const model = await genAI.getGenerativeModel({model: "gemini-1.5-flash"});
+            const model = await genAI.getGenerativeModel({model: "gemini-2.5-flash-lite"});
             const body = req.body
             const lastMsg = body[body.length - 1]
             const prompt = `
